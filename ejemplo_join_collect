@@ -1,0 +1,7 @@
+from pyspark.context import SparkContext
+sc = SparkContext('local', 'test')
+vars = sc.parallelize([("x", 1), ("y", 4)])
+vars_2 = sc.parallelize([("x", 2), ("y", 3)])
+sorted(vars.join(vars_2).collect())
+sc.range(4).collect()
+sc.parallelize(["x", "y"]).collect()
